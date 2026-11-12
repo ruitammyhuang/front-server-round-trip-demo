@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Round Trip: form POST version</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main>
+    <h1>Quick check</h1>
+    <p class="version">Version B: form POST. No JavaScript. The server sends back a whole new page.</p>
+
+    <!-- STEP B3: the browser draws this page. The person types a guess and presses Check.
+         The form sends the guess to /form as a POST. Next: STEP B4 in app.py. -->
+    <form method="post" action="{{ url_for('form_version') }}">
+      <label for="guess">What does HTML stand for?</label>
+      <input id="guess" name="guess" type="text" autocomplete="off" value="{{ guess }}">
+      <button type="submit">Check</button>
+    </form>
+
+    <!-- STEP B8: on the new page, this shows the message the server wrote.
+         On the first visit (STEP B3) message is empty, so nothing shows here. -->
+    {% if message %}
+      <p id="feedback" class="{{ 'right' if correct else 'wrong' }}" role="status">{{ message }}</p>
+    {% endif %}
+
+    <p class="switch"><a href="{{ url_for('home') }}">See Version A: fetch</a></p>
+  </main>
+</body>
+</html>

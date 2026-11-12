@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #f4f6fa;
+  color: #1d2433;
+}
+
+main {
+  max-width: 34rem;
+  margin: 4rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin-top: 0;
+  color: #0021a5;
+}
+
+.version {
+  color: #4a5368;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 2px solid #9aa3b5;
+  border-radius: 6px;
+}
+
+input:focus {
+  outline: 3px solid #fa4616;
+  outline-offset: 2px;
+}
+
+button {
+  margin-top: 0.75rem;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background: #0021a5;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background: #00177a;
+}
+
+#feedback {
+  min-height: 1.5rem;
+  margin-top: 1.25rem;
+}
+
+.right,
+.wrong {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.right {
+  background: #e6f4ea;
+  color: #1b5e20;
+}
+
+.wrong {
+  background: #fdecea;
+  color: #8a1c1c;
+}
+
+.switch a {
+  color: #0021a5;
+}

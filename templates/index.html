@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Round Trip: fetch version</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main>
+    <h1>Quick check</h1>
+    <p class="version">Version A: fetch. The page stays put. Only the message changes.</p>
+
+    <!-- STEP A2: the browser draws this page. The person types a guess here. -->
+    <form id="quiz-form">
+      <label for="guess">What does HTML stand for?</label>
+      <input id="guess" name="guess" type="text" autocomplete="off">
+      <button type="submit">Check</button>
+    </form>
+
+    <!-- Empty for now. main.js fills this in with the server's answer at STEP A10. -->
+    <p id="feedback" role="status" aria-live="polite"></p>
+
+    <p class="switch"><a href="{{ url_for('form_version') }}">See Version B: a plain form POST</a></p>
+  </main>
+
+  <!-- STEP A2 (end): the browser loads main.js last. Next: STEP A3 in main.js. -->
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
