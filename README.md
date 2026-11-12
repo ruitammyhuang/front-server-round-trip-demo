@@ -105,7 +105,3 @@ $.ajax({
 ```
 
 jQuery has to be loaded on the page first, with a `<script>` tag that points to it. `fetch()` is built into every modern browser, so it needs nothing extra.
-
-## Using GitHub Codespaces?
-
-Change the last line of `app.py` to `host="0.0.0.0"`. Codespaces cannot open the forwarded port otherwise.
