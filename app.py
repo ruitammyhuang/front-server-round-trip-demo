@@ -15,7 +15,7 @@ until STEP 0 at the bottom starts the server.
 Version A (fetch) runs STEP A1 to A10. Version B (form POST) runs STEP B1 to B8.
 The steps jump between app.py, the templates, and main.js, in the order they run.
 """
-
+import os
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
@@ -93,6 +93,14 @@ def form_version():
 if __name__ == "__main__":
     # STEP 0: this runs first, when you click Run Python File.
     # It starts the server, which then waits for the browser to ask for a page.
+
+    # GitHub Codespaces sets a setting called CODESPACES to "true".
+    # In Codespaces, the server must listen on 0.0.0.0 so the forwarded port can reach it.
+    # On your own computer, 127.0.0.1 keeps the server private to your machine.
+    if os.environ.get("CODESPACES") == "true":
+        host = "0.0.0.0"
+    else:
+        host = "127.0.0.1"
+
     # Port 5001, because macOS uses 5000 for AirPlay.
-    # In GitHub Codespaces, change host to "0.0.0.0".
-    app.run(host="127.0.0.1", port=5001, debug=True)
+    app.run(host=host, port=5001, debug=True)
